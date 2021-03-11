@@ -1,5 +1,5 @@
 :root {
-	--unit: 150px;
+	--unit: 100px;
 }
 
 * {
@@ -26,11 +26,18 @@
 
 .item-w2 { width: calc(var(--unit) * 2); }
 .item-w3 { width: calc(var(--unit) * 3); }
+.item-w4 { width: calc(var(--unit) * 4); }
+.item-w5 { width: calc(var(--unit) * 5); }
 
 .item-h2 { height: calc(var(--unit) * 2); }
 .item-h3 { height: calc(var(--unit) * 3); }
 .item-h4 { height: calc(var(--unit) * 4); }
 .item-h5 { height: calc(var(--unit) * 5); }
+
+.item-s2 { width: calc(var(--unit) * 2); height: calc(var(--unit) * 2); }
+.item-s3 { width: calc(var(--unit) * 3); height: calc(var(--unit) * 3); }
+.item-s4 { width: calc(var(--unit) * 4); height: calc(var(--unit) * 4); }
+.item-s5 { width: calc(var(--unit) * 5); height: calc(var(--unit) * 5); }
 
 .block-item img {
 	width: 100%;

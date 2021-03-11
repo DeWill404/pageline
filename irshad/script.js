@@ -1,40 +1,71 @@
 // Unit value
-var _unit = 150;
+var _unit = 100;
+var _tempUnit = 0;
+
 // Method to get minimal value of given size
 function mValue(size) { return size/_unit; }
 
 // Get Container
 var _blockContainer = document.getElementById('block-container');
-// Max available width
-var _widthAvailable = _blockContainer.offsetWidth - _blockContainer.offsetWidth % _unit;
 
 // Get list of item in Container
 var _itemList = document.getElementsByClassName('block-item');
 
+// Max available width
+var _widthAvailable = _blockContainer.offsetWidth - _blockContainer.offsetWidth % _unit;
+
+
+/* Set container width */
+_blockContainer.style.width = (_widthAvailable).toString()+"px";
+// if (_widthAvailable >= _unit*2) {	// Check if a row can contain 2 col
+// }
+// else {	// resize item width & height
+// 	_blockContainer.style.width = "90%";	// Reset container to 90% of parent
+// 	_widthAvailable = _blockContainer.offsetWidth;
+	
+// 	// Check if its atleast contains 1 col
+// 	if (_blockContainer.offsetWidth < _unit)
+// 		_tempUnit = _widthAvailable;	// Go for 1 cols
+// 	else
+// 		_tempUnit = Math.floor(_widthAvailable / 2);	// Go for 2 col
+
+// 	// Resize all item height & width
+// 	for (let i = 0; i < _itemList.length; i++) {
+// 		const item = _itemList[i];
+// 		item.style.width = (mValue(item.offsetWidth)*_tempUnit).toString()+"px";
+// 		item.style.height = (mValue(item.offsetHeight)*_tempUnit).toString()+"px";
+// 	}
+
+// 	// Update old unit value
+// 	_unit = _tempUnit;
+// }
+
+
 // Max value
-var _maxWidth = mValue(_widthAvailable);
-var _maxHeight = 0;
-for (let i = 0; i < _itemList.length; i++) { _maxHeight += mValue(_itemList[i].offsetHeight); }
+var _maxWidth = Math.floor(mValue(_widthAvailable));
 
 
 // Space matrix to store the details of item
 var _spaceMatrix = [new Array(_maxWidth).fill(0)];
 
-/* Set container width */
-_blockContainer.style.width = (_widthAvailable).toString()+"px";
-
-/* Set values in Space Matrix */
+// Set values in Space Matrix
 for (let i = 0; i < _itemList.length; i++) {
+	console.log(i);
 	// intial index
 	var _top = 0;
 	var _left = 0;
 	const item = _itemList[i];
-	
+
+	// If item is larger then window size, then make it square 1 in row
+	if (mValue(item.offsetWidth) > _maxWidth) {
+		item.style.width = (_widthAvailable).toString()+"px";
+		item.style.height = (_widthAvailable).toString()+"px";
+	}
 
 	var next = false;
 	while (!next) {
-		// Increase the height of spaceMatrix to store new Image
-		for (let d = 0; d < _top+mValue(item.offsetHeight)-_spaceMatrix.length; d++)
+		// Increase the height of spaceMatrix to store new item
+		while ( _top+mValue(item.offsetHeight) > _spaceMatrix.length )
 			_spaceMatrix.push(new Array(_maxWidth).fill(0));
 
 		// Check if is at end of row
@@ -60,32 +91,26 @@ for (let i = 0; i < _itemList.length; i++) {
 
 		// Move to next col & row
 		_left++;
-		if (_left == _maxWidth) {
-				_left = 0;
-				_top++;
-		}
+		if (_left == _maxWidth) { _left = 0; _top++; }
 	}
 }
 
-// Array to store initial x,y index of each image
-var _indexList = new Array(_itemList.length);
+
+/* Display item at ist place */
+var placeitem = new Set();
 for (let i = 0; i < _spaceMatrix.length; i++) {
-	const row = _spaceMatrix[i];
-	for (let j = 0; j < row.length; j++) {
-		if (row[j]>0) {
-			if (_indexList[row[j]-1] == null) {
-				_indexList[row[j]-1] = [j, i];
-			}
+	for (let j = 0; j < _spaceMatrix[i].length; j++) {
+		// Search for unplaced item
+		if (_spaceMatrix[i][j]>0 && !placeitem.has(_spaceMatrix[i][j])) {
+			const item = _itemList[ _spaceMatrix[i][j]-1 ];
+
+			item.style.left = (j * _unit).toString()+"px";
+			item.style.top = (i * _unit).toString()+"px";
+
+			placeitem.add(_spaceMatrix[i][j]);
+
+			// Exit when all item is found
+			if (placeitem.size == _itemList.length) break;
 		}
 	}
 }
-
-// Display item at ist place
-for (let i = 0; i < _itemList.length; i++) {
-	const item = _itemList[i];
-	item.style.left = (_indexList[i][0]*_unit).toString()+"px";
-	item.style.top = (_indexList[i][1]*_unit).toString()+"px";
-}
-
-console.log(_spaceMatrix);
-console.log(_indexList);
