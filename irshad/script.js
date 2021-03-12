@@ -17,28 +17,6 @@ var _widthAvailable = _blockContainer.offsetWidth - _blockContainer.offsetWidth 
 
 /* Set container width */
 _blockContainer.style.width = (_widthAvailable).toString()+"px";
-// if (_widthAvailable >= _unit*2) {	// Check if a row can contain 2 col
-// }
-// else {	// resize item width & height
-// 	_blockContainer.style.width = "90%";	// Reset container to 90% of parent
-// 	_widthAvailable = _blockContainer.offsetWidth;
-	
-// 	// Check if its atleast contains 1 col
-// 	if (_blockContainer.offsetWidth < _unit)
-// 		_tempUnit = _widthAvailable;	// Go for 1 cols
-// 	else
-// 		_tempUnit = Math.floor(_widthAvailable / 2);	// Go for 2 col
-
-// 	// Resize all item height & width
-// 	for (let i = 0; i < _itemList.length; i++) {
-// 		const item = _itemList[i];
-// 		item.style.width = (mValue(item.offsetWidth)*_tempUnit).toString()+"px";
-// 		item.style.height = (mValue(item.offsetHeight)*_tempUnit).toString()+"px";
-// 	}
-
-// 	// Update old unit value
-// 	_unit = _tempUnit;
-// }
 
 
 // Max value
@@ -114,3 +92,10 @@ for (let i = 0; i < _spaceMatrix.length; i++) {
 		}
 	}
 }
+
+// Add vanilla tilt effect to all block items
+VanillaTilt.init(document.querySelectorAll(".block-item"),{
+	glare: true,
+	reverse: true,
+	"max-glare": 0.5
+});
