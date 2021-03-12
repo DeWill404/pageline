@@ -40,10 +40,11 @@
 .item-s5 { width: calc(var(--unit) * 5); height: calc(var(--unit) * 5); }
 
 .block-item img, .block-item video {
-	width: calc(100% - 15px);
-	height: calc(100% - 15px);
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
 	border-radius: 18px;
-	box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+	cursor: pointer;
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.9);
 }
 
 .block-item video:focus {

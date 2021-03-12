@@ -28,7 +28,6 @@ var _spaceMatrix = [new Array(_maxWidth).fill(0)];
 
 // Set values in Space Matrix
 for (let i = 0; i < _itemList.length; i++) {
-	console.log(i);
 	// intial index
 	var _top = 0;
 	var _left = 0;
@@ -94,7 +93,7 @@ for (let i = 0; i < _spaceMatrix.length; i++) {
 }
 
 // Add vanilla tilt effect to all block items
-VanillaTilt.init(document.querySelectorAll(".block-item"),{
+VanillaTilt.init(document.querySelectorAll(".block-item img, .block-item video"),{
 	glare: true,
 	reverse: true,
 	"max-glare": 0.5
