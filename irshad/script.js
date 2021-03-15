@@ -16,7 +16,7 @@ var _widthAvailable = _blockContainer.offsetWidth - _blockContainer.offsetWidth 
 
 
 /* Set container width */
-_blockContainer.style.width = (_widthAvailable).toString()+"px";
+_blockContainer.style.width = _widthAvailable + "px";
 
 
 // Max value
@@ -35,8 +35,8 @@ for (let i = 0; i < _itemList.length; i++) {
 
 	// If item is larger then window size, then make it square 1 in row
 	if (mValue(item.offsetWidth) > _maxWidth) {
-		item.style.width = (_widthAvailable).toString()+"px";
-		item.style.height = (_widthAvailable).toString()+"px";
+		item.style.width = _widthAvailable + "px";
+		item.style.height = _widthAvailable + "px";
 	}
 
 	var next = false;
@@ -73,6 +73,7 @@ for (let i = 0; i < _itemList.length; i++) {
 }
 
 
+
 /* Display item at ist place */
 var placeitem = new Set();
 for (let i = 0; i < _spaceMatrix.length; i++) {
@@ -80,10 +81,11 @@ for (let i = 0; i < _spaceMatrix.length; i++) {
 		// Search for unplaced item
 		if (_spaceMatrix[i][j]>0 && !placeitem.has(_spaceMatrix[i][j])) {
 			const item = _itemList[ _spaceMatrix[i][j]-1 ];
-
-			item.style.left = (j * _unit).toString()+"px";
-			item.style.top = (i * _unit).toString()+"px";
-
+			
+			item.style.left = j * _unit + "px";
+			item.style.top = i * _unit + "px";
+			console.log(i * _unit + "px");
+			
 			placeitem.add(_spaceMatrix[i][j]);
 
 			// Exit when all item is found
@@ -92,9 +94,6 @@ for (let i = 0; i < _spaceMatrix.length; i++) {
 	}
 }
 
+
 // Add vanilla tilt effect to all block items
-VanillaTilt.init(document.querySelectorAll(".block-item img, .block-item video"),{
-	glare: true,
-	reverse: true,
-	"max-glare": 0.5
-});
+VanillaTilt.init(document.querySelectorAll(".item-card"),{ reverse: true });
