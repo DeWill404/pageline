@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grids.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us</title>
+</head>
+<body>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
+      onload="if(submitted) {window.location='about us.html';}"></iframe> 
+
+
+    <section class="section-form">
+        <div class="row">
+            <h2>We're happy to hear from you</h2>
+        </div>
+        <div class="row">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfXBr3JgKT73hhaZZGMAyE9buTol4m_4G42tzJIXEmc2kzgoA/formResponse" method="post" id="contact-form" target="hidden_iframe">
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="entry.1315164070" id="name" placeholder="Your name" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="email" name="entry.54481433" id="email" placeholder="example@example.com" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="name">Mobile Number</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="entry.603392891" id="number" placeholder="Your mobile number" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="find-us">How did you find us ?</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <select name="entry.586983184" id="find-us">
+                            <option value="friends" selected>Friends</option>
+                            <option value="search">Search engine</option>
+                            <option value="ad">Advertisement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label>Newsletter</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="checkbox" name="entry.782640164" id="news" checked> Yes, please
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label>Drop us a line</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <textarea name="entry.1607024234" placeholder="Your message"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <!-- inorder to align with the text field -->
+                        <label>&nbsp;</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="submit" value="Submit" onclick="submitForm()">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+
+    <!-- <form id="contactForm"  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeFYmEJ4hpqs85ILCcEx1K7dvfV6xPb0jeW4XaIGCJijsZZ_w/formResponse" method="POST" target="hidden_iframe">
+        <label for="name">Name: </label>
+        <input type="text" name="entry.1491187494" id="name">
+        <label for="number">Mobile No.</label>
+        <input type="text" name="entry.302712898" id="name">
+        <input type="button" value="Submit" onclick="submitForm()">
+    </form> -->
+
+    <script>
+        function submitForm() {
+           let form = document.querySelector('#contact-form');
+           form.submit();
+           form.reset();
+           return false;
+        }
+    </script>
+</body>
+</html>
