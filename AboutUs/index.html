@@ -10,8 +10,7 @@
 </head>
 <body>
 
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
-      onload="if(submitted) {window.location='about us.html';}"></iframe> 
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe> 
 
 
     <section class="section-form">
@@ -38,31 +37,15 @@
                 </div>
                 <div class="row">
                     <div class="col span-1-of-3">
-                        <label for="name">Mobile Number</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="text" name="entry.603392891" id="number" placeholder="Your mobile number" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col span-1-of-3">
                         <label for="find-us">How did you find us ?</label>
                     </div>
                     <div class="col span-2-of-3">
                         <select name="entry.586983184" id="find-us">
-                            <option value="friends" selected>Friends</option>
-                            <option value="search">Search engine</option>
-                            <option value="ad">Advertisement</option>
-                            <option value="other">Other</option>
+                            <option value="Friends" selected>Friends</option>
+                            <option value="Google">Google</option>
+                            <option value="Advertisement">Advertisement</option>
+                            <option value="Other">Other</option>
                         </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col span-1-of-3">
-                        <label>Newsletter</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="checkbox" name="entry.782640164" id="news" checked> Yes, please
                     </div>
                 </div>
                 <div class="row">
@@ -85,23 +68,7 @@
             </form>
         </div>
     </section>
-    
 
-    <!-- <form id="contactForm"  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeFYmEJ4hpqs85ILCcEx1K7dvfV6xPb0jeW4XaIGCJijsZZ_w/formResponse" method="POST" target="hidden_iframe">
-        <label for="name">Name: </label>
-        <input type="text" name="entry.1491187494" id="name">
-        <label for="number">Mobile No.</label>
-        <input type="text" name="entry.302712898" id="name">
-        <input type="button" value="Submit" onclick="submitForm()">
-    </form> -->
-
-    <script>
-        function submitForm() {
-           let form = document.querySelector('#contact-form');
-           form.submit();
-           form.reset();
-           return false;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
