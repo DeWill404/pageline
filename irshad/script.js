@@ -84,7 +84,6 @@ for (let i = 0; i < _spaceMatrix.length; i++) {
 			
 			item.style.left = j * _unit + "px";
 			item.style.top = i * _unit + "px";
-			console.log(i * _unit + "px");
 			
 			placeitem.add(_spaceMatrix[i][j]);
 
@@ -97,3 +96,41 @@ for (let i = 0; i < _spaceMatrix.length; i++) {
 
 // Add vanilla tilt effect to all block items
 VanillaTilt.init(document.querySelectorAll(".item-card"),{ reverse: true });
+
+
+
+// Const to store list of play-btns
+const playBtns = document.getElementsByClassName("play-btn");
+
+// Set top & left value of playbtn positions
+for (let i = 0; i < playBtns.length; i++) {
+	const playBtn = playBtns[i];
+	playBtn.style.top = Math.floor(playBtn.parentElement.offsetHeight / 2) + "px";
+	playBtn.style.left = Math.floor(playBtn.parentElement.offsetWidth / 2) + "px";
+}
+
+
+// Variable to store current playing video index
+var currVideo = -1
+
+// play or pause of video on btn click
+function playPause(index) {
+	// If video is played previously, then paussed it
+	if (currVideo != -1) {
+		playBtns[currVideo].style.opacity = 1;
+		playBtns[currVideo].innerHTML = '<i class="bi bi-play-fill"></i>';
+		document.getElementsByClassName("video-item")[currVideo].pause();
+	}
+
+	// If video to play is not current
+	if (currVideo != index) {
+		playBtns[index].style.opacity = 0.1;
+		playBtns[index].innerHTML = '<i class="bi bi-pause-fill"></i>';
+		document.getElementsByClassName("video-item")[index].play();
+		currVideo = index;
+	}
+	// If it is current video, then reset counter
+	else {
+		currVideo = -1;
+	}
+}

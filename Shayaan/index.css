@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+.title {
+  color: #ffcc29;
+}
+
+.card {
+  border: 1px solid #ffcc29;
+}
