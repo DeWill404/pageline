@@ -6,6 +6,21 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<style>
+		.carousel-item {
+            height: 18rem;
+            background: #777;
+            color: white;
+            position: relative;
+        }
+        .container {
+            position: absolute;
+            bottom: 20%;
+            left: 0%;
+			right: 0;
+            padding-bottom: 25px;
+        }
+	</style>
 </head>
 
 <body>
@@ -203,7 +218,49 @@
 
 
 
-
+	<!-- Review Carousel -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+				aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="container">
+					<h1>Example Heading</h1>
+					<p class="col-md-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi maxime voluptates
+						odit accusamus non
+						suscipit quos deleniti illum. Modi, minus ex.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="container">
+					<h1>Example Heading 2</h1>
+					<p class="col-md-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi maxime voluptates
+						odit accusamus non
+						suscipit quos deleniti illum. Modi, minus ex.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="container">
+					<h1>Example Heading 3</h1>
+					<p class="col-md-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi maxime voluptates
+						odit accusamus non
+						suscipit quos deleniti illum. Modi, minus ex.</p>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
 
 
 
