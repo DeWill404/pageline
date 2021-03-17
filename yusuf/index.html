@@ -6,6 +6,104 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" />
+	<style>
+		.carousel-item {
+            height: 18rem;
+            background: #777;
+            color: white;
+            position: relative;
+        }
+        .carousel_container {
+            position: absolute;
+            bottom: 20%;
+            left: 0%;
+			right: 0;
+            padding-bottom: 25px;
+			padding-left: 50px;
+        }
+
+		.newsletter-subscribe {
+		    color: #313437;
+		    background-color: #ffffff;
+		    padding: 55px 74px
+		}
+
+		.newsletter-subscribe p {
+		    color: #7d8285;
+		    line-height: 1.5
+		}
+
+		.newsletter-subscribe h2 {
+		    font-size: 24px;
+		    font-weight: bold;
+		    margin-bottom: 25px;
+		    line-height: 1.5;
+		    padding-top: 0;
+		    margin-top: 0;
+		    color: inherit
+		}
+
+		.newsletter-subscribe .intro {
+		    font-size: 16px;
+		    margin: 0 auto 25px
+		}
+
+		.newsletter-subscribe .intro p {
+		    margin-bottom: 35px
+		}
+
+		.newsletter-subscribe form {
+		    justify-content: center
+		}
+
+		.newsletter-subscribe form .form-control {
+		    background: #eff1f4;
+		    border: none;
+		    border-radius: 3px;
+		    box-shadow: none;
+		    outline: none;
+		    color: inherit;
+		    text-indent: 9px;
+		    height: 45px;
+		    margin-right: 10px;
+		}
+
+		.newsletter-subscribe form .btn {
+		    padding: 16px 32px;
+		    border: none;
+		    background: none;
+		    box-shadow: none;
+		    text-shadow: none;
+		    opacity: 0.9;
+		    text-transform: uppercase;
+		    font-weight: bold;
+		    font-size: 13px;
+		    letter-spacing: 0.4px;
+		    line-height: 1
+		}
+
+		.newsletter-subscribe form .btn:hover {
+		    opacity: 1
+		}
+
+		.newsletter-subscribe form .btn:active {
+		    transform: translateY(1px)
+		}
+
+		.newsletter-subscribe form .btn-primary {
+		    background-color: #000000 !important;
+		    color: #fff;
+		    outline: none !important
+		}
+
+		.newsletter {
+		    color: #000000 !important
+		}
+
+	</style>
 </head>
 
 <body>
@@ -203,8 +301,69 @@
 
 
 
+	<!-- Review Carousel -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+				aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="container carousel_container">
+					<h1>Example Heading</h1>
+					<p class="col-md-6 col-sm-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi maxime voluptates odit accusamus non suscipit quos deleniti illum. Modi, minus ex.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="container carousel_container">
+					<h1>Example Heading 2</h1>
+					<p class="col-md-6 col-sm-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi maxime voluptates
+						odit accusamus non
+						suscipit quos deleniti illum. Modi, minus ex.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="container carousel_container">
+					<h1>Example Heading 3</h1>
+					<p class="col-md-6 col-sm-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi maxime voluptates
+						odit accusamus non
+						suscipit quos deleniti illum. Modi, minus ex.</p>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
 
 
+
+	<!-- News Letter -->
+	<div class="newsletter-subscribe mt-5 container">
+		<div class="container">
+			<div class="intro">
+				<h2 class="text-center newsletter">Subscribe to our Newsletter</h2>
+				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+					laboris nisi ut aliquip ex ea commodo consequat. </p>
+			</div>
+			<form class="form-inline row" method="post">
+				<div class="form-group col-md-6">
+					<input class="form-control" type="email" name="email" placeholder="Your Email">
+				</div>
+				<div class="form-group col-md-2">
+					<button class="btn btn-primary" type="button">Subscribe </button>
+				</div>
+			</form>
+		</div>
+	</div>
 
 
 
