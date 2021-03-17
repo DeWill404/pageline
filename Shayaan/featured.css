@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+.images {
+  border: double #ffcc29;
+}
+
+.details {
+  margin-left: 8%;
+  border: double #ffcc29;
+}
+
+.lightcyan {
+  width: 50px;
+  height: 50px;
+  background-color: lightcyan;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.blue {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.yellow {
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.green {
+  width: 50px;
+  height: 50px;
+  background-color: lightgreen;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.order1 {
+  border-radius: 100px;
+  width: 230px;
+}
+
+.order2 {
+  border-radius: 100px;
+  margin-left: 50px;
+  width: 230px;
+}
