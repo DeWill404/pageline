@@ -11,6 +11,7 @@ html,
 body {
     background-color: #fff;
     color: #555;
+    font-family: "Lato", "Arial", sans-serif;
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
@@ -32,7 +33,20 @@ h2 {
     text-align: center;
     margin-bottom: 30px;
     letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
   }
+
+h2::after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+    
+}
 
 section {
     padding: 80px 0;
@@ -47,6 +61,8 @@ input[type="submit"] {
   text-decoration: none;
   border: none;
   border-radius: 200px;
+  -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+
   transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
@@ -71,13 +87,9 @@ input[type="submit"]:active {
 /* ----------------------------------------------- */
 
 
-.contact-form {
+#contact-form {
     width: 60%;
     margin: 0 auto;
-}
-
-form {
-    margin: 0 10px;
 }
 
 input[type=text],
