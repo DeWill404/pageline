@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="grids.css">
     <link rel="stylesheet" href="styles.css">
@@ -14,56 +16,61 @@
 </head>
 <body>
 
+
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe> 
-    <section class="section-form">
-        <div class="row">
+
+    <section class="section-form" >
+        <div class="row" data-aos="fade-right">
             <h2>We're happy to hear from you</h2>
         </div>
         <div class="row">
             <form action="https://docs.google.com/forms/d/e/1FAIpQLSfXBr3JgKT73hhaZZGMAyE9buTol4m_4G42tzJIXEmc2kzgoA/formResponse" method="post" id="contact-form" target="hidden_iframe">
-                <div class="row">
-                    <div class="col span-1-of-3">
-                        <label for="name">Name</label>
+                <div data-aos="fade-in">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="entry.1315164070" id="name" placeholder="Your name" required>
+                        </div>
                     </div>
-                    <div class="col span-2-of-3">
-                        <input type="text" name="entry.1315164070" id="name" placeholder="Your name" required>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" name="entry.54481433" id="email" placeholder="example@example.com" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="find-us">How did you find us ?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <select name="entry.586983184" id="find-us">
+                                <option value="Friends" selected>Friends</option>
+                                <option value="Google">Google</option>
+                                <option value="Advertisement">Advertisement</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Drop us a line</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea name="entry.1607024234" placeholder="Your message"></textarea>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" data-aos="fade-left">
                     <div class="col span-1-of-3">
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="email" name="entry.54481433" id="email" placeholder="example@example.com" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col span-1-of-3">
-                        <label for="find-us">How did you find us ?</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <select name="entry.586983184" id="find-us">
-                            <option value="Friends" selected>Friends</option>
-                            <option value="Google">Google</option>
-                            <option value="Advertisement">Advertisement</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col span-1-of-3">
-                        <label>Drop us a line</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <textarea name="entry.1607024234" placeholder="Your message"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col span-1-of-3">
-                        <!-- inorder to align with the text field -->
+                        <!-- inorder to align with the te
+                            xt field -->
                         <label>&nbsp;</label>
                     </div>
-                    <div class="col span-2-of-3">
+                    <div class="col span-2-of-3" >
                         <input type="submit" value="Submit" onclick="submitForm()">
                     </div>
                 </div>
@@ -71,8 +78,10 @@
         </div>
     </section>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7531.505605870545!2d72.86145197665537!3d19.293113224185685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b1aa3e53b083%3A0x13359bf37ecb928f!2sPAGELINESTORE!5e0!3m2!1sen!2sin!4v1615961362568!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe data-aos="fade-up" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7531.505605870545!2d72.86145197665537!3d19.293113224185685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b1aa3e53b083%3A0x13359bf37ecb928f!2sPAGELINESTORE!5e0!3m2!1sen!2sin!4v1615961362568!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
+<!-- JAVASCRIPT -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
