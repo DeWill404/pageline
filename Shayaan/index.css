@@ -1,10 +1,27 @@
-* {
-  box-sizing: border-box;
-}
-.title {
-  color: #ffcc29;
+.card-img-top {
+  height: 200px;
+  width: 100%;
 }
 
-.card {
-  border: 1px solid #ffcc29;
+.price span {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.card .new-price {
+  font-size: x-large;
+}
+
+.card .original-price {
+  font-size: large;
+  text-decoration: line-through;
+  font-style: italic;
+  color: grey;
+}
+
+.card .discount {
+  font-size: large;
+  color: orange;
+  margin-right: 0;
 }
