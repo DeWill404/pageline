@@ -4,38 +4,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
     <title>Pageline</title>
     <link rel="shortcut icon" type="image/png" href="icon.png" />
     <link rel="stylesheet" href="featured.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
   </head>
   <body>
+
+    <!-- Container of product details -->
     <div class="container-fluid">
       <div class="row m-3">
 
+
+        <!-- Set left cols to carousel image -->
         <div id="images" class="col-lg-4 col-md-6">
           <div id="carousels" class="carousel slide" data-bs-ride="carousel" >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./Images/1.jpg" class="d-block w-100 carousel-img" alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img src="./Images/2.jpg" class="d-block w-100 carousel-img" alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img src="./Images/3.jpg" class="d-block w-100 carousel-img" alt="..." />
-              </div>
-            </div>
+            <!-- Render image for carousel from localStorage -->
+            <div id="carousel-player" class="carousel-inner"></div>
+
+            <!-- Direction btn for Carousel -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carousels" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -47,45 +35,30 @@
           </div>
         </div>
 
+
+        <!-- Set left cols to product description -->
         <div id="details" class="col-lg-8 col-md-6">
-          <h1>Heading ot the Item to sell</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vitae similique rem accusantium commodi illo quam, dignissimos enim? Debitis ea veritatis cupiditate nam architecto necessitatibus ut. At ipsa vitae quod?</p>
+          <!-- Product title -->
+          <h1 id="product-title"></h1>
+          <!-- Product Subtitle -->
+          <p id="product-subtitle"></p>
+          <!-- Color selector -->
           <h4>Color</h4>
-          <div class="color-picker-container">
-            <span class="color-picker color-selected" onclick="selectColor(0)" style="background:red;"></span>
-            <span class="color-picker" onclick="selectColor(1)" style="background:blue;"></span>
-            <span class="color-picker" onclick="selectColor(2)" style="background:white;"></span>
-            <span class="color-picker" onclick="selectColor(3)" style="background:black;"></span>
-            <span class="color-picker" onclick="selectColor(4)" style="background:green;"></span>
-            <span class="color-picker" onclick="selectColor(5)" style="background:yellow;"></span>
-          </div>
+          <div id="color-container" class="color-picker-container"></div>
+          <!-- Size selector -->
           <h4>Size</h4>
-          <div class="row g-2">
-            <div class="col-lg-3 col-6 text-center">
-              <button class="btn btn-outline-dark size-btn">Small</button>
-            </div>
-            <div class="col-lg-3 col-6 text-center">
-              <button class="btn btn-outline-dark size-btn">Medium</button>
-            </div>
-            <div class="col-lg-3 col-6 text-center">
-              <button class="btn btn-outline-dark size-btn">Large</button>
-            </div>
-            <div class="col-lg-3 col-6 text-center">
-              <button class="btn btn-outline-dark size-btn">Extra Large</button>
-            </div>
-          </div>
+          <div id="size-container" class="row g-2"></div>
+          <!-- Description of Product -->
           <h4>More Info</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla cupiditate obcaecati excepturi quidem quas? Praesentium autem a nesciunt suscipit libero dignissimos aliquid voluptatibus quibusdam mollitia sunt at odio ullam velit provident repudiandae quos vel sequi perferendis ducimus atque, impedit quae. Ducimus et temporibus accusantium facilis quis id laudantium, quam voluptates.</p>
+          <p id="description"></p>
+          <!-- Quantity changer -->
           <div id="quantity" class="d-flex align-items-center">
             <h4>Quantity : </h4>
-            <button class="btn btn-outline-primary" onclick="decrease()">
-              <i class="bi bi-dash"></i>
-            </button>
-            <span id="qty-cnt" style="font-size:30px; color: blueviolet;">0</span>
-            <button class="btn btn-outline-primary" onclick="increase()">
-              <i class="bi bi-plus"></i>
-            </button>
+            <button class="btn btn-outline-dark" onclick="decrease()"> <i class="bi bi-dash"></i> </button>
+            <span id="qty-cnt" style="font-size:30px;">0</span>
+            <button class="btn btn-outline-dark" onclick="increase()"> <i class="bi bi-plus"></i> </button>
           </div>
+          <!-- Checkout Btns -->
           <button class="btn btn-outline-dark d-inline-block me-1">Add to  Cart <i class="bi bi-cart-check-fill"></i></button>
           <button class="btn btn-outline-dark d-inline-block ms-1">Buy <i class="bi bi-credit-card-2-front-fill"></i></button>
         </div>
@@ -93,7 +66,6 @@
       </div>
     </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
@@ -101,8 +73,39 @@
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
-
+    <script src="./data.js"></script>
     <script>
+      // Get data from localStorage & data.js file
+      var data = DATA[window.localStorage.getItem("data")];
+
+      // Set Carousel Images
+      var carousel = document.getElementById("carousel-player");
+      for (let i = 0; i < data["imgSrc"].length; i++)
+        carousel.innerHTML +=  `<div class="carousel-item active">
+                                  <img src="./Images/${data['imgSrc'][i]}" class="d-block w-100 carousel-img" alt="..." />
+                                </div>`;
+
+      // Set product TITLE & SUBTITLE
+      document.getElementById("product-title").innerHTML = data["cardTitle"];
+      document.getElementById("product-subtitle").innerHTML = data["subTitle"];
+
+      // Set colors for product
+      var colorCtn = document.getElementById("color-container");
+      for (let i = 0; i < data['color'].length; i++)
+        colorCtn.innerHTML += `<span class="color-picker ${i==0?'color-selected':''}" onclick="selectColor(${i})" style="background:#${data['color'][i]};"></span>`;
+
+      // Give description of products
+      document.getElementById("description").innerHTML = data["description"];
+
+      // Set size btns of the product
+      var sizeCtn = document.getElementById("size-container");
+      for (let i = 0; i < data['size'].length; i++) 
+        sizeCtn.innerHTML += `<div class="col-lg-3 col-6 text-center">
+                                <button class="btn btn-outline-dark size-btn">${data['size'][i]}</button>
+                              </div>`;
+
+
+      /* Switch color picker state from set & unset */
       var colorPicker = document.getElementsByClassName('color-picker');
       var pickedColor = 0;
       function selectColor(index) {
@@ -111,6 +114,8 @@
         pickedColor = index;
       }
 
+
+      /* Increase & decrease quantity of product */
       var quantity = document.getElementById("qty-cnt");
       function decrease() {
         var cnt = parseInt(quantity.innerHTML) - 1;

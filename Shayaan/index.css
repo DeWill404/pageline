@@ -1,18 +1,22 @@
+/* Define image dimension in card */
 .card-img-top {
   height: 200px;
   width: 100%;
 }
 
+/* Define basic style of price section */
 .price span {
   display: inline-block;
   font-weight: bold;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
+/* Set new price larger */
 .card .new-price {
   font-size: x-large;
 }
 
+/* Set old price style */
 .card .original-price {
   font-size: large;
   text-decoration: line-through;
@@ -20,6 +24,7 @@
   color: grey;
 }
 
+/* Set Discount Style */
 .card .discount {
   font-size: large;
   color: orange;

@@ -1,7 +1,11 @@
-.size-btn {
-  width: 90%;
+/* Resize the height of carousel img, on small screen */
+@media screen and (max-width: 768px) {
+  .carousel-item, .carousel-img {
+    max-height: 75vh;
+  }
 }
 
+/* Set color picker style */
 .color-picker {
   display:inline-block;
   margin:2px;
@@ -13,19 +17,20 @@
   transition: all 500ms;
 }
 
+/* Animate selected color picker */
 .color-selected {
   border: 2px solid;
   border-radius: 2px;
   transition: all 500ms;
 }
 
+/* Resize Size Btn to max 90% of coloumn */
+.size-btn {
+  width: 90%;
+}
+
+/* Add margin to quantity item, to increase space between them */
 #quantity  > * {
   margin-right: 15px;
 }
 
-
-@media screen and (max-width: 768px) {
-  .carousel-item, .carousel-img {
-    max-height: 75vh;
-  }
-}
