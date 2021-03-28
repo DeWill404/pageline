@@ -20,6 +20,7 @@
         <!-- Set left cols to carousel image -->
         <div id="images" class="col-lg-4 col-md-6">
           <div id="carousels" class="carousel slide" data-bs-ride="carousel" >
+            
             <!-- Render image for carousel from localStorage -->
             <div id="carousel-player" class="carousel-inner"></div>
 
@@ -32,25 +33,32 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button> 
+
           </div>
         </div>
 
 
         <!-- Set left cols to product description -->
         <div id="details" class="col-lg-8 col-md-6">
+          
           <!-- Product title -->
           <h1 id="product-title"></h1>
+          
           <!-- Product Subtitle -->
           <p id="product-subtitle"></p>
+          
           <!-- Color selector -->
           <h4>Color</h4>
           <div id="color-container" class="color-picker-container"></div>
+          
           <!-- Size selector -->
           <h4>Size</h4>
           <div id="size-container" class="row g-2"></div>
+          
           <!-- Description of Product -->
           <h4>More Info</h4>
           <p id="description"></p>
+          
           <!-- Quantity changer -->
           <div id="quantity" class="d-flex align-items-center">
             <h4>Quantity : </h4>
@@ -58,10 +66,13 @@
             <span id="qty-cnt" style="font-size:30px;">0</span>
             <button class="btn btn-outline-dark" onclick="increase()"> <i class="bi bi-plus"></i> </button>
           </div>
+          
           <!-- Checkout Btns -->
           <button class="btn btn-outline-dark d-inline-block me-1">Add to  Cart <i class="bi bi-cart-check-fill"></i></button>
           <button class="btn btn-outline-dark d-inline-block ms-1">Buy <i class="bi bi-credit-card-2-front-fill"></i></button>
+
         </div>
+
 
       </div>
     </div>
@@ -75,33 +86,47 @@
     ></script>
     <script src="./data.js"></script>
     <script>
-      // Get data from localStorage & data.js file
-      var data = DATA[window.localStorage.getItem("data")];
+      // Get product name
+      var productName = window.location.href;
+      productName = productName.substring(productName.indexOf("#")+1).replace("-", " ");
+
+      // Search for product in DATA
+      for (let i = 0; i < DATA.length; i++) {
+        const dataMap = DATA[i];
+        if (dataMap["cardTitle"] == productName) {
+          var product = DATA[i];
+        }
+      }
+      
+      // If product not found, the go to error page
+      if (product == undefined)
+        window.location.replace("404.html");
 
       // Set Carousel Images
       var carousel = document.getElementById("carousel-player");
-      for (let i = 0; i < data["imgSrc"].length; i++)
-        carousel.innerHTML +=  `<div class="carousel-item active">
-                                  <img src="./Images/${data['imgSrc'][i]}" class="d-block w-100 carousel-img" alt="..." />
+      for (let i = 0; i < product["imgSrc"].length; i++)
+        carousel.innerHTML +=  `<div class="carousel-item ${i==0 ? 'active' : ''}">
+                                  <img src="./Images/${product['imgSrc'][i]}" class="d-block w-100 carousel-img" alt="..." />
                                 </div>`;
+      
 
       // Set product TITLE & SUBTITLE
-      document.getElementById("product-title").innerHTML = data["cardTitle"];
-      document.getElementById("product-subtitle").innerHTML = data["subTitle"];
+      document.getElementById("product-title").innerHTML = product["cardTitle"];
+      document.getElementById("product-subtitle").innerHTML = product["subTitle"];
 
       // Set colors for product
       var colorCtn = document.getElementById("color-container");
-      for (let i = 0; i < data['color'].length; i++)
-        colorCtn.innerHTML += `<span class="color-picker ${i==0?'color-selected':''}" onclick="selectColor(${i})" style="background:#${data['color'][i]};"></span>`;
+      for (let i = 0; i < product['color'].length; i++)
+        colorCtn.innerHTML += `<span class="color-picker ${i==0?'color-selected':''}" onclick="selectColor(${i})" style="background:#${product['color'][i]};"></span>`;
 
       // Give description of products
-      document.getElementById("description").innerHTML = data["description"];
+      document.getElementById("description").innerHTML = product["description"];
 
       // Set size btns of the product
       var sizeCtn = document.getElementById("size-container");
-      for (let i = 0; i < data['size'].length; i++) 
+      for (let i = 0; i < product['size'].length; i++) 
         sizeCtn.innerHTML += `<div class="col-lg-3 col-6 text-center">
-                                <button class="btn btn-outline-dark size-btn">${data['size'][i]}</button>
+                                <button class="btn btn-outline-dark size-btn">${product['size'][i]}</button>
                               </div>`;
 
 

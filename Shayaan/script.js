@@ -11,7 +11,7 @@ for (let i = 0; i < DATA.length; i++) {
                               <div class="card-body">
                                 <h5 class="card-title">${data["cardTitle"]} (${data["rating"]}<i class="bi bi-star-fill"></i>)</h5>
                                 <p class="card-text">${data["subTitle"]}</p>
-                                <a href="featured.html" class="stretched-link" target="_blank" onclick="saveData(${i})"></a>
+                                <a href="featured.html#${data["cardTitle"].replace(" ","-")}" class="stretched-link" target="_blank"></a>
                                 <div class="price d-flex  align-items-center">
                                   ${ data["discount"]==0
                                     ?
@@ -24,10 +24,4 @@ for (let i = 0; i < DATA.length; i++) {
                               </div>
                             </div>
                           </div>`;
-}
-
-
-/* Function to save data index to local storage */
-function saveData(index) {
-  window.localStorage.setItem("data", index);
 }
