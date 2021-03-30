@@ -409,7 +409,6 @@ p {
 }
 
 .dk-footer {
-  padding: 40px 0 0 0;
   background-color: #c8d5b9;
   position: relative;
   z-index: 2;
@@ -417,13 +416,6 @@ p {
 .dk-footer .contact-us {
   margin-top: 0;
   margin-bottom: 10px;
-  padding-left: 80px;
-}
-.dk-footer .contact-us .contact-info {
-  margin-left: 50px;
-}
-.dk-footer .contact-us.contact-us-last {
-  margin-left: -80px;
 }
 .dk-footer .contact-icon i {
   font-size: 24px;
@@ -433,7 +425,6 @@ p {
 }
 
 .dk-footer .logo-img {
-  margin-top: -15%;
   padding: 10px;
 }
 
@@ -447,23 +438,18 @@ p {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.dk-footer .footer-social-link {
+  margin-bottom: 10px;
+}
 .dk-footer .footer-social-link ul {
   list-style-type: none;
-  padding: 10px 10px 20px 10px;
+  width: max-content;
+  padding: 0;
   margin: auto;
-  width: 60%;
-}
-
-@media screen and (max-width: 990px) {
-  .dk-footer .footer-social-link ul {
-    width: 47%;
-  }
-  .dk-footer .logo-img a img {
-    margin-top: -10%;
-  }
 }
 .dk-footer .footer-social-link li {
   display: inline-block;
+  margin: 0.1em;
 }
 .dk-footer .footer-social-link a i {
   display: block;
@@ -525,11 +511,6 @@ p {
   text-align: center;
   padding-bottom: 15px;
 }
-
-.footer-left-widget {
-  padding-left: 80px;
-}
-
 .footer-widget .section-heading {
   margin-bottom: 30px;
 }
@@ -546,8 +527,7 @@ p {
 }
 
 .footer-widget ul {
-  width: 60%;
-  float: left;
+  /* float: left; */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -623,7 +603,8 @@ p {
 .contact-us {
   position: relative;
   z-index: 2;
-  margin-top: 65px;
+  width: max-content;
+  margin: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -635,19 +616,16 @@ p {
   -ms-flex-align: center;
   align-items: center;
 }
-
 .contact-icon {
-  position: absolute;
-}
-.contact-icon i {
+  width: max-content;
+  display: inline-block;
   font-size: 36px;
-  top: -5px;
-  position: relative;
   color: #7fa998;
 }
 
 .contact-info {
-  margin-left: 75px;
+  display: inline-block;
+  margin-left: 10px;
   color: black;
 }
 
@@ -660,7 +638,6 @@ p {
 
 .copyright {
   padding: 28px 0;
-  margin-top: 55px;
   background-color: #faf3dd;
 }
 .copyright span,
