@@ -1,10 +1,32 @@
-* {
-  box-sizing: border-box;
-}
-.title {
-  color: #ffcc29;
+/* Define image dimension in card */
+.card-img-top {
+  height: 200px;
+  width: 100%;
 }
 
-.card {
-  border: 1px solid #ffcc29;
+/* Define basic style of price section */
+.price span {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Set new price larger */
+.card .new-price {
+  font-size: x-large;
+}
+
+/* Set old price style */
+.card .original-price {
+  font-size: large;
+  text-decoration: line-through;
+  font-style: italic;
+  color: grey;
+}
+
+/* Set Discount Style */
+.card .discount {
+  font-size: large;
+  color: orange;
+  margin-right: 0;
 }
