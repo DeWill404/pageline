@@ -1,65 +1,65 @@
 // Unit value
-var _unit = 100;
-var _tempUnit = 0;
+var unit = 100;
+var tempUnit = 0;
 
 // Method to get minimal value of given size
-function mValue(size) { return size/_unit; }
+function mValue(size) { return size/unit; }
 
 // Get Container
-var _blockContainer = document.getElementById('block-container');
+var blockContainer = document.getElementById('block-container');
 
 // Get list of item in Container
-var _itemList = document.getElementsByClassName('block-item');
+var itemList = document.getElementsByClassName('block-item');
 
 // Max available width
-var _widthAvailable = _blockContainer.offsetWidth - _blockContainer.offsetWidth % _unit;
+var widthAvailable = blockContainer.offsetWidth - blockContainer.offsetWidth % unit;
 
 
 /* Set container width */
-_blockContainer.style.width = _widthAvailable + "px";
+blockContainer.style.width = widthAvailable + "px";
 
 
 // Max value
-var _maxWidth = Math.floor(mValue(_widthAvailable));
+var maxWidth = Math.floor(mValue(widthAvailable));
 
 
 // Space matrix to store the details of item
-var _spaceMatrix = [new Array(_maxWidth).fill(0)];
+var spaceMatrix = [new Array(maxWidth).fill(0)];
 
 // Set values in Space Matrix
-for (let i = 0; i < _itemList.length; i++) {
+for (let i = 0; i < itemList.length; i++) {
 	// intial index
-	var _top = 0;
-	var _left = 0;
-	const item = _itemList[i];
+	var TOP = 0;
+	var LEFT = 0;
+	const item = itemList[i];
 
 	// If item is larger then window size, then make it square 1 in row
-	if (mValue(item.offsetWidth) > _maxWidth) {
-		item.style.width = _widthAvailable + "px";
-		item.style.height = _widthAvailable + "px";
+	if (mValue(item.offsetWidth) > maxWidth) {
+		item.style.width = widthAvailable + "px";
+		item.style.height = widthAvailable + "px";
 	}
 
 	var next = false;
 	while (!next) {
 		// Increase the height of spaceMatrix to store new item
-		while ( _top+mValue(item.offsetHeight) > _spaceMatrix.length )
-			_spaceMatrix.push(new Array(_maxWidth).fill(0));
+		while ( TOP+mValue(item.offsetHeight) > spaceMatrix.length )
+			spaceMatrix.push(new Array(maxWidth).fill(0));
 
 		// Check if is at end of row
-		if (_left+mValue(item.offsetWidth)<=_maxWidth) {
+		if (LEFT+mValue(item.offsetWidth)<=maxWidth) {
 			var valid = true;
 
 			// Check if empty space is available
-			for (let x=_left; valid && x<_left+mValue(item.offsetWidth); x++)
-				for (let y=_top; valid && y<_top+mValue(item.offsetHeight); y++)
-					if (_spaceMatrix[y][x] != 0)
+			for (let x=LEFT; valid && x<LEFT+mValue(item.offsetWidth); x++)
+				for (let y=TOP; valid && y<TOP+mValue(item.offsetHeight); y++)
+					if (spaceMatrix[y][x] != 0)
 						valid = false;
 
 			if (valid) {
 				// Add image index to available space
-				for (let x = _left; x < _left+mValue(item.offsetWidth); x++)
-					for (let y = _top; y < _top+mValue(item.offsetHeight); y++)
-						_spaceMatrix[y][x] = i+1;
+				for (let x = LEFT; x < LEFT+mValue(item.offsetWidth); x++)
+					for (let y = TOP; y < TOP+mValue(item.offsetHeight); y++)
+						spaceMatrix[y][x] = i+1;
 				next = true;
 				continue;
 			}
@@ -67,8 +67,8 @@ for (let i = 0; i < _itemList.length; i++) {
 		}
 
 		// Move to next col & row
-		_left++;
-		if (_left == _maxWidth) { _left = 0; _top++; }
+		LEFT++;
+		if (LEFT == maxWidth) { LEFT = 0; TOP++; }
 	}
 }
 
@@ -76,19 +76,19 @@ for (let i = 0; i < _itemList.length; i++) {
 
 /* Display item at ist place */
 var placeitem = new Set();
-for (let i = 0; i < _spaceMatrix.length; i++) {
-	for (let j = 0; j < _spaceMatrix[i].length; j++) {
+for (let i = 0; i < spaceMatrix.length; i++) {
+	for (let j = 0; j < spaceMatrix[i].length; j++) {
 		// Search for unplaced item
-		if (_spaceMatrix[i][j]>0 && !placeitem.has(_spaceMatrix[i][j])) {
-			const item = _itemList[ _spaceMatrix[i][j]-1 ];
+		if (spaceMatrix[i][j]>0 && !placeitem.has(spaceMatrix[i][j])) {
+			const item = itemList[ spaceMatrix[i][j]-1 ];
 			
-			item.style.left = j * _unit + "px";
-			item.style.top = i * _unit + "px";
+			item.style.left = j * unit + "px";
+			item.style.top = i * unit + "px";
 			
-			placeitem.add(_spaceMatrix[i][j]);
+			placeitem.add(spaceMatrix[i][j]);
 
 			// Exit when all item is found
-			if (placeitem.size == _itemList.length) break;
+			if (placeitem.size == itemList.length) break;
 		}
 	}
 }
