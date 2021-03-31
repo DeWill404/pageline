@@ -22,7 +22,7 @@
 		<div class="navparent">
 			<div class="row text-center m-0 w-100 align-items-center">
 				<div class="col-3 p-0">
-					<img src="images/suit.svg" class="navBtn d-block d-md-none mx-auto" alt="" width="40px">
+					<img src="images/suit.svg" id="sideNavOpener" class="navBtn d-block d-lg-none mx-auto" alt="" width="40px" onclick="document.getElementById('nav-container').classList.remove('visually-hidden')">
 				</div>
 				<div class="col-6">
 					<a class="logo fs-1 navbar-brand mx-auto" href="">PAGELiNE</a>
@@ -73,6 +73,37 @@
 					</div>
 				</div>
 			</nav>
+
+			<div id="nav-container" class="visually-hidden">
+				<nav id="sideNav">
+					<h1 class="logo fs-1 navbar-brand d-inline-block pt-2"><u>PAGELiNE</u></h1>
+					<button class="btn logo fs-1 float-end p-0 pt-1 px-2" onclick="document.getElementById('nav-container').classList.add('visually-hidden')">X</button>
+					<ul>
+						<li><a class="" aria-current="page" href="#">HOME</a></li>
+						<li>
+							<span onclick="showHide('category-img', 'category-ul')">CATEGORY</span>
+							<img id="category-img" src="./asset/right.svg" width="16px" height="16px">
+							<ul id="category-ul" class="visually-hidden">
+								<li><a class="" aria-current="page" href="#">Shirts</a></li>
+								<li>
+									<span onclick="showHide('tshirts-img', 'tshirts-ul')">T-Shirts</span>
+									<img id="tshirts-img" src="./asset/right.svg" width="16px" height="16px">
+									<ul id="tshirts-ul" class="visually-hidden">
+										<li><a class="" aria-current="page" href="#">Full sleeves</a></li>
+										<li><a class="" aria-current="page" href="#">Half sleeves</a></li>
+										<li><a class="" aria-current="page" href="#">Round neck</a></li>
+									</ul>
+								</li>
+								<li><a class="" aria-current="page" href="#">Jeans</a></li>
+								<li><a class="" aria-current="page" href="#">Hoodies</a></li>
+							</ul>
+						</li>
+						<li><a class="" aria-current="page" href="#">FEATURES</a></li>
+						<li><a class="" aria-current="page" href="#">ABOUT</a></li>
+					</ul>
+				</nav>
+			</div>
+
 
 		</div>
 	</div>
@@ -420,27 +451,21 @@
 									</div>
 									<ul>
 										<li>
-											<img src="./asset/icon.png" alt="" class="li-icons">
 											<a href="#">ABOUT US</a>
 										</li>
 										<li>
-											<img src="./asset/icon.png" alt="" class="li-icons">
 											<a href="#">CATEGORY</a>
 										</li>
 										<li>
-											<img src="./asset/icon.png" alt="" class="li-icons">
 											<a href="#">FEATURES</a>
 										</li>
 										<li>
-											<img src="./asset/icon.png" alt="" class="li-icons">
 											<a href="#">CONTACT US</a>
 										</li>
 										<li>
-											<img src="./asset/icon.png" alt="" class="li-icons">
 											<a href="#">TESTIMONIALS</a>
 										</li>
 										<li>
-											<img src="./asset/icon.png" alt="" class="li-icons">
 											<a href="#">FAQ</a>
 										</li>
 									</ul>

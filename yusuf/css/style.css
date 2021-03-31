@@ -146,6 +146,34 @@ input[type="text"]:focus {
 
 }
 
+#nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.19);
+  transition: width 1s;
+}
+#sideNav {
+  width: 100%;
+  max-width: 250px;
+  height: 100%;
+  padding: 10px;
+  background: #f5daaf;
+}
+#sideNav li {
+  list-style-type: none;
+}
+#sideNav a, #sideNav span {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+}
+#sideNav a:hover {
+  color: #7fa998;
+}
 /* ***********************************navbar-end*********************** */
 
 /* **********************************carousel***************************** */
@@ -501,14 +529,7 @@ p {
 
 .footer-widget li {
   margin-bottom: 5px;
-}
-
-.footer-widget li:hover > img {
-  transform: rotate(450deg);
-}
-
-.footer-widget li img {
-  transition: 1s;
+  padding-left: 20px;
 }
 
 .footer-widget p {
