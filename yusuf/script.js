@@ -1,14 +1,15 @@
-//Get the button
-var mybutton = document.getElementById("back-to-top");
-
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 100vh from the top of the document, show the button & sticky navbar
 window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
+  if (document.body.scrollTop < window.innerHeight && document.documentElement.scrollTop < window.innerHeight) {
+    document.getElementById("back-to-top").style.display = "none";
+    if (document.getElementById('navBar').classList.contains('fixed'))
+      document.querySelector('.fixed .logo').classList.add('visually-hidden');
+    document.getElementById('navBar').classList.remove('fixed');
   } else {
-    mybutton.style.display = "none";
+    document.getElementById("back-to-top").style.display = "block";
+    document.getElementById('navBar').classList.add('fixed');
+    document.querySelector('.fixed .logo').classList.remove('visually-hidden');
   }
 }
 
