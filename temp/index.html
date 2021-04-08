@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+
+    <div class="profile">
+        <div class="profile_wrapper swiper-wrapper">
+
+          <div class="profile_item swiper-slide">
+            <div class="profile_img">
+              <div class="profile-side-container">
+                <img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
+                <div class="profile_name">JOHN DOE</div>
+                <div class="profile_position">Owner</div>
+                <div class="profile-icons">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="profile_content">
+              <div class="profile_about">About</div>
+              <div class="profile_details">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolore nam nesciunt maiores sapiente dignissimos exercitationem quisquam? Ea iste temporibus soluta voluptatibus quod tenetur libero eaque exercitationem voluptatum quam alias pariatur, porro mollitia asperiores dolore dignissimos vero provident voluptas! Incidunt, aut ea cumque eligendi iure soluta laudantium. Possimus, sint suscipit?</div>
+              <!-- <a href="#" class="profile_btn">READ MORE</a> -->
+            </div>
+          </div>
+
+          <div class="profile_item swiper-slide">
+            <div class="profile_img">
+              <div class="profile-side-container">
+                <img src="https://source.unsplash.com/rDEOVtE7vOs" class="img img-responsive">
+                <div class="profile_name">IRON MAN</div>
+                <div class="profile_position">Manager</div>
+                <div class="profile-icons">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="profile_content">
+              <div class="profile_about">About</div>
+              <div class="profile_details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi vel laborum numquam tempora veniam in quaerat, optio doloremque natus. Praesentium ipsa fugit aut quibusdam! In quia eos voluptas architecto reprehenderit assumenda! Illo at ut, aspernatur maxime aperiam magni, non possimus cupiditate natus eos dolores cumque! Facilis debitis nisi fugiat repudiandae?</div>
+              <a href="#" class="profile_btn">READ MORE</a>
+            </div>
+          </div>
+
+          <div class="profile_item swiper-slide">
+            <div class="profile_img">
+              <div class="profile-side-container">
+                <img src="https://source.unsplash.com/ROJFuWCsfmA" class="img img-responsive">
+                <div class="profile_name">To do</div>
+                <div class="profile_position">Intern</div>
+                <div class="profile-icons">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                  <a href="#"><i class="fa fa-git"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="profile_content">
+              <div class="profile_about">About</div>
+              <div class="profile_details">Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptate mollitia dignissimos odio veniam repudiandae, atque, labore iste est error, id rerum ut amet quia? Eius quisquam distinctio beatae illo nobis velit impedit doloribus minima magni, dolores, id voluptas obcaecati sunt quasi necessitatibus ratione at eum placeat in architecto laudantium?</div>
+              <a href="#" class="profile_btn">READ MORE</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="profile_slidder"></div>
+      </div>
+
+    	<div class="feedback-container">
+        <div class="feedback-wrapper">
+          <div class="image-container d-none d-lg-block">
+            <img src="./img-01.png" alt="IMG">
+          </div>
+    
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe> 
+          <form id="googleform" class="form validate ms-lg-5"  action="https://docs.google.com/forms/d/e/1FAIpQLSfXBr3JgKT73hhaZZGMAyE9buTol4m_4G42tzJIXEmc2kzgoA/formResponse" method="post" id="contact-form" target="hidden_iframe">
+            <span class="form-title">Leave your suggestions</span>
+    
+            <div class="input-wrapper validate-input" data-validate="Name is required">
+              <input name="entry.1315164070" class="input" type="text" onfocus="onFocus(0)" name="name" placeholder="Name" required>
+              <span class="input-focus"></span>
+              <span class="input-icon">
+                <i class="far fa-user" aria-hidden="true"></i>
+              </span>
+            </div>
+    
+            <div class="input-wrapper validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+              <input name="entry.54481433" class="input" type="email" onfocus="onFocus(1)" name="email" placeholder="Email" required>
+              <span class="input-focus"></span>
+              <span class="input-icon">
+                <i class="far fa-envelope" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div class="input-wrapper validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+              <select class="input" name="entry.586983184" onfocus="onFocus(2)">
+                <option value="Friends" selected>Friends</option>
+                <option value="Google">Google</option>
+                <option value="Advertisement">Advertisement</option>
+                <option value="Other">Other</option>
+              </select>
+              <i class="fas fa-chevron-down select-down"></i>
+              <span class="input-focus"></span>
+              <span class="input-icon">
+                <i class="fas fa-users" aria-hidden="true"></i>
+              </span>
+            </div>
+    
+            <div class="input-wrapper validate-input" data-validate = "Message is required">
+              <textarea name="entry.1607024234" class="input" name="message" onfocus="onFocus(3)" placeholder="Message"></textarea>
+              <span class="input-focus"></span>
+            </div>
+    
+            <div class="btn-container">
+              <button class="submit-btn" onclick="submitFeedback(event)">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row align-items-center bg-dark text-light">
+        <div class="col-md-6">
+          <div class="row justify-content-between">
+            <div class="col-md-6">
+              <h3 class="">Address</h3>
+              <span>
+                Flat No: 101, Ashirwad Manzil Kanungo Area, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107.
+              </span>
+            </div>
+            <div class="col-md-6">
+              <!-- <h3 class="">Address</h3>
+              <span>
+                Flat No: 101, Ashirwad Manzil Kanungo Area, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107.
+              </span> -->
+            </div>
+            <div class="col-md-6">
+              <h3 class="">Contact</h3>
+              <span>Email: support@mobirise.com</span>
+              <br>
+              <span>Phone: +1 (0) 000 0000 001</span>
+              <br>
+              <span>Fax: +1 (0) 000 0000 002</span>
+            </div>
+            <div class="col-md-6">
+              <h3 class="">Feedback</h3>
+              <a href="" style="color: white; text-decoration: none;">
+                Please send us your ideas, bug reports, suggestions! Any feedback would be appreciated.
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7531.505605870545!2d72.86145197665537!3d19.293113224185685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b1aa3e53b083%3A0x13359bf37ecb928f!2sPAGELINESTORE!5e0!3m2!1sen!2sin!4v1615961362568!5m2!1sen!2sin" width="100%" height="300px" loading="lazy"></iframe>
+        </div>
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script src="./vanilla-tilt.min.js"></script>
+    <script src="./script.js"></script>
+    <script>
+      // Add swiper effect
+      var swiper = new Swiper('.profile', {
+        spaceBetween: 30,
+        effect: 'fade',
+        loop: true,
+        mousewheel: { invert: false },
+        pagination: {
+          el: '.profile_slidder',
+          clickable: true,
+        }
+      });
+      // Add tilt efect
+      VanillaTilt.init(document.querySelectorAll(".image-container"),{ reverse: true });
+    </script>
+</body>
+</html>

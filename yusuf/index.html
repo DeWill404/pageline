@@ -22,7 +22,7 @@
 		<div class="navparent">
 			<div class="row text-center m-0 w-100 align-items-center">
 				<div class="col-3 p-0">
-					<img src="images/suit.svg" id="sideNavOpener" class="navBtn d-block d-lg-none mx-auto" alt="" width="40px" onclick="document.getElementById('nav-container').classList.remove('visually-hidden')">
+					<img src="images/suit.svg" id="sideNavOpener" class="navBtn d-block d-lg-none mx-auto" alt="" width="40px" onclick="document.getElementById('nav-container').classList.remove('visually-hidden'); body.style.overflow='hidden'">
 				</div>
 				<div class="col-6">
 					<a class="logo fs-1 navbar-brand mx-auto" href="">PAGELiNE</a>
@@ -35,17 +35,17 @@
 			<nav id="navBar" class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid">
 					<div class="navDimension collapse navbar-collapse" id="navbarNavDropdown">
-						<a class="logo visually-hidden fs-1 navbar-brand mx-auto" href="">PAGELiNE</a>
+						<a class="logo visually-hidden fs-1 navbar-brand" href="">PAGELiNE</a>
 						<ul class="navAttribute navbar-nav">
 							<li class="nav-item navTabs">
 								<a class="nav-link menu_tabs active" aria-current="page" href="#">HOME</a>
 							</li>
 							<li class="nav-item navTabs dropdown menu_tabs">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+								<a class="nav-link dropdown-toggle dropdown-items" href="#" id="navbarDropdownMenuLink" role="button"
 									data-bs-toggle="dropdown" aria-expanded="true">
 									CATEGORY
 								</a>
-								<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<ul class="dropdown-menu dropdown-items" aria-labelledby="navbarDropdownMenuLink">
 									<li><a class="dropdown-item menu_tabs" href="#">Shirts</a></li>
 
 									<li class="nav-item-inside dropdown-item dropend">
@@ -78,7 +78,7 @@
 			<div id="nav-container" class="visually-hidden">
 				<nav id="sideNav">
 					<h1 class="logo fs-1 navbar-brand d-inline-block pt-2"><u>PAGELiNE</u></h1>
-					<button class="btn fs-1 float-end p-0" onclick="document.getElementById('nav-container').classList.add('visually-hidden')">X</button>
+					<button class="btn fs-1 float-end p-0" onclick="document.getElementById('nav-container').classList.add('visually-hidden'); body.style.overflow='visible'">X</button>
 					<ul>
 						<li><a class="" aria-current="page" href="#">HOME</a></li>
 						<li>

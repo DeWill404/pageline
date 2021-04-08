@@ -104,12 +104,17 @@ input[type="text"]:focus {
 }
 
 .nav-link {
+  box-sizing: border-box;
   border-bottom: 3px solid #69b0ac;
+  border-top: 3px solid #69b0ac;
+  transition: all 500ms linear;
 }
 
 .nav-link:hover {
+  border-top: 3px solid #fde8cd;
   border-bottom: 3px solid black;
   background-color: #fde8cd;
+  transition: all 500ms linear;
 }
 
 .navTabs .dropdown-menu {
@@ -169,12 +174,12 @@ input[type="text"]:focus {
 .fixed .logo {
   padding: 0;
   margin: 0;
+  line-height: 1;
   color: white;
-  padding-top: 5px;
   padding-left: 10px;
 }
 .fixed .navAttribute {
-  height: 55px;
+  height: 50px;
   width: 100vw;
   margin: 0;
 }
@@ -185,7 +190,6 @@ input[type="text"]:focus {
 }
 .fixed .navTabs > a{
   height: 100%;
-  padding-top: 14px;
 }
 .fixed .dropdown-item {
   font-weight: bold;
@@ -706,13 +710,13 @@ p {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #fadcac;
+  background: rgba(250, 220, 172, 0.5);
   border-color: #2e2e2e;
   display: none;
   z-index: 999;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  transition: all 1s linear;
 }
 
 .back-to-top .btn-light:hover {

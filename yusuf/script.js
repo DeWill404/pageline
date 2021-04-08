@@ -11,6 +11,9 @@ function scrollFunction() {
     document.getElementById('navBar').classList.add('fixed');
     document.querySelector('.fixed .logo').classList.remove('visually-hidden');
   }
+  var doc = document.getElementsByClassName('dropdown-items');
+  for (let i = 0; i < doc.length; i++)
+    doc[i].classList.remove('show');
 }
 
 mybutton.onclick = function() {topFunction()};

@@ -1,0 +1,241 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* PROFILE CONTAINER */
+.profile {
+  width: 95%;
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 25px;
+  border-radius: 25px;
+  height: 400px;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 992px) {
+  .profile {
+    max-width: 680px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .profile {
+    min-height: 500px;
+    height: auto;
+    margin: 180px auto;
+  }
+}
+@media screen and (max-height: 500px) and (min-width: 992px) {
+  .profile { height: 350px; }
+}
+
+
+/* PROFILE ITEM */
+.profile_item {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .profile_item { flex-direction: column; }
+}
+.profile_item.swiper-slide-active .profile_img img {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+.profile_item.swiper-slide-active .profile_content > * {
+  opacity: 1;
+  transform: none;
+}
+.profile_item.swiper-slide-active .profile_content > *:nth-child(1) { transition-delay: 0.3s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(2) { transition-delay: 0.4s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(3) { transition-delay: 0.5s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(4) { transition-delay: 0.6s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(5) { transition-delay: 0.7s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(6) { transition-delay: 0.8s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(7) { transition-delay: 0.9s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(8) { transition-delay: 1s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(9) { transition-delay: 1.1s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(10) { transition-delay: 1.2s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(11) { transition-delay: 1.3s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(12) { transition-delay: 1.4s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(13) { transition-delay: 1.5s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(14) { transition-delay: 1.6s; }
+.profile_item.swiper-slide-active .profile_content > *:nth-child(15) { transition-delay: 1.7s; }
+
+
+/* PROFILE SIDE IMAGE CONTAINER */
+.profile_img {
+   max-width: 300px;
+   flex-shrink: 0;
+   height: 300px;
+   background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+   box-shadow: 4px 13px 30px 1px rgba(0, 0, 0, 0.1);
+   border-radius: 20px;
+   transform: translateX(-80px);
+   overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .profile_img { transform: translateY(-50%); }
+}
+
+.profile-side-container {
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.profile-side-container img {
+    width: 100%;
+    height: 100%;
+    transition: all linear 0.25s;
+}
+
+.profile-side-container .profile_name {
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+    font-size: 30px;
+    color: #FFF;
+  text-transform: uppercase;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: all linear 0.25s;
+}
+
+.profile-side-container .profile-icons {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: #FFF;
+    transition: all linear 0.25s;
+}
+
+.profile-side-container .profile_position {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    color: #FFF;
+    font-size: 13px;
+    transition: all linear 0.25s;
+}
+
+.profile-icons a:hover, .profile-icons a:focus {
+  color: #FFF;
+}
+
+.profile-side-container .profile-icons .fa { margin: 5px; }
+.profile-side-container:hover img { filter: grayscale(100%); }
+.profile-side-container:hover .profile_name { bottom: 80px; }
+.profile-side-container:hover .profile_position { bottom: 60px; }
+.profile-side-container:hover .profile-icons { right: 40px; }
+
+
+/* ABOUT CONTAINER */
+.profile_content { padding-right: 25px; }
+@media screen and (max-width: 768px) {
+  .profile_content {
+    margin-top: -80px;
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .profile_content { padding: 0; }
+}
+.profile_content > * {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.4s;
+}
+.profile_about {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0d0925;
+  margin-bottom: 20px;
+}
+.profile_details {
+  color: #4e4a67;
+  margin-bottom: 30px;
+  line-height: 1.5em;
+}   
+
+
+/* PROFILE BUTTON */
+.profile_btn {
+  display: inline-flex;
+  background-image: linear-gradient(147deg, rgba(0, 0, 255, 0.0), rgba(0, 0, 255, 0.9), rgba(0, 0, 255, 1));
+  padding: 15px 35px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 576px) { .profile_btn { width: 100%; } }
+
+
+/* RIGHT SLIDDER */
+.profile .swiper-container-horizontal > .swiper-pagination-bullets, .profile .swiper-pagination-custom, .profile .swiper-pagination-fraction {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+.profile_slidder {
+  position: absolute;
+  z-index: 21;
+  right: 20px;
+  width: 11px !important;
+  text-align: center;
+  left: auto !important;
+  top: 50%;
+  bottom: auto !important;
+  transform: translateY(-50%);
+  overflow: hidden;
+  max-height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .profile_slidder {
+    transform: translateX(-50%);
+    left: 50% !important;
+    top: 205px;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.profile_slidder.swiper-pagination-bullets .swiper-pagination-bullet { margin: 8px 0; }
+@media screen and (max-width: 768px) {
+  .profile_slidder.swiper-pagination-bullets .swiper-pagination-bullet { margin: 0 5px; }
+}
+.profile_slidder .swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  display: block;
+  border-radius: 10px;
+  opacity: 0.2;
+  transition: all 0.3s;
+}
+.profile_slidder .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: blue;
+  height: 30px;
+}
+@media screen and (max-width: 768px) {
+  .profile_slidder .swiper-pagination-bullet-active { height: 11px; width: 30px; }
+}
